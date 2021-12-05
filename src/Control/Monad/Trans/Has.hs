@@ -4,10 +4,6 @@ module Control.Monad.Trans.Has where
 
 import "transformers" Control.Monad.Trans.Class
 
--- |
--- class Has t m where
---   liftH :: t Identity a -> m a
-
 {- | The transformer stack @m@ contains the transformer @t@.
 
 Explicitly, @m = t1 (t2 (t3 ... (tN m)...))@,
@@ -18,7 +14,7 @@ class Has (t :: (* -> *) -> * -> *) m where
 
   This will apply 'lift' as many times as necessary to insert the action.
   The higher-rank type involving @forall n@ basically says:
-  "The action to lift must only use the structure of the _transformer_,
+  "The action to lift must only use the structure of the /transformer/,
   not of a specific monad,
   and is thus definable for any monad @n@".
   -}

@@ -1,6 +1,6 @@
 cabal-version:      2.4
 name:               has-transformers
-version:            0.1.0.0
+version:            0.1.0.1
 
 synopsis: This library `Has` transformers
 
@@ -12,6 +12,7 @@ description:
   you can automatically lift any function @thing :: tN m a@ into the stack with a single function, 'liftH'.
 
 bug-reports: https://github.com/turion/has-transformers/issues
+homepage: https://github.com/turion/has-transformers
 license: MIT
 license-file: LICENSE
 author: Manuel Bärenz
@@ -20,6 +21,7 @@ maintainer: programming@manuelbaerenz.de
 copyright: (c) 2021- Manuel Bärenz
 category: Effect
 extra-source-files: CHANGELOG.md
+extra-doc-files: README.md
 
 library
   exposed-modules:
