@@ -2,7 +2,7 @@ cabal-version:      2.4
 name:               has-transformers
 version:            0.1.0.1
 
-synopsis: This library `Has` transformers
+synopsis: This library 'Has' transformers
 
 description:
   A very slim library for first-order effects based on monad transformers
