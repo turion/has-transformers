@@ -8,12 +8,13 @@ A very slim library for first-order effects based on monad transformers
 ### What exactly?
 
 Given a transformer stack `t1 (t2 (t3 (... m))) a`,
-you can automatically lift any function `thing :: tN m a` into the stack with a single function, `liftH`.
+you can automatically lift any function `thing :: tN m a` into the stack with a single function,
+[`liftH`](https://hackage.haskell.org/package/has-transformers/docs/Control-Monad-Trans-Has.html#v:liftH).
 
 ### What features does it have?
 
 * _Final encoding_:
-  There is a type class `Has t m` that says that the transformer `t` is in the stack `m`.
+  There is a type class [`Has t m`](https://hackage.haskell.org/package/has-transformers/docs/Control-Monad-Trans-Has.html#t:Has) that says that the transformer `t` is in the stack `m`.
 * _Extensibility_:
   Standard [`transformers`](https://hackage.haskell.org/package/transformers/) are supported out of the box.
   You can add any further transformers to your stack.
@@ -50,7 +51,7 @@ avoid spelling out the complete stack in all your code,
 separate concerns, invert dependencies, have clean architecture,
 and be able to change your monad stack without breaking existing code?
 
-Then simply use the `Has` typeclass,
+Then simply use the [`Has`](https://hackage.haskell.org/package/has-transformers/docs/Control-Monad-Trans-Has.html#t:Has) typeclass,
 and replace all your `lift` orgies with its one function, `liftH`.
 
 But isn't this a solved problem, you ask?
@@ -157,11 +158,11 @@ No, you don't have to choose one and discard all the others!
 #### Can you please give us a feature matrix?
 
 | Library | Extensible | Higher order effects | "Fusion" / no runtime interpretation | Arbitrary base monads |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | [`has-transformers`](https://www.github.com/turion/has-transformers/) | ✅ | ❌ | ✅ | ✅ |
 | [`mtl`](https://hackage.haskell.org/package/mtl) | ❌ | ✅ | ✅ | ✅ |
 | [`fused-effects`](https://hackage.haskell.org/package/fused-effects) | ✅ | ✅ | ✅ |
-| [`polysemy`](https://hackage.haskell.org/package/polysemy), [`freer-simple`](https://hackage.haskell.org/package/freer-simple), ... | ✅ | ❌ | ✅ |
+| [`polysemy`](https://hackage.haskell.org/package/polysemy), [`freer-simple`](https://hackage.haskell.org/package/freer-simple), ... | ✅ | ❌ | ✅ | ✅ |
 | [`rio`](https://hackage.haskell.org/package/rio) | ✅ | ❌ | ✅ | ❌ |
 
 Let me know if other features & libraries are important to you.
@@ -227,14 +228,14 @@ you can do a similar procedure.
 
 ### Can I use two `ReaderT`, two `StateT`, etc., in the same stack?
 
-Yes. See the [`TwoReaders`](https://www.github.com/turion/has-transformers/examples/Examples/TwoReaders.hs) example.
+Yes. See the [`TwoReaders`](https://github.com/turion/has-transformers/blob/master/examples/Examples/TwoReaders.hs) example.
 You might have to add some type signatures here and there to help GHC figure it out.
 
 ### Does this work with _any_ transformer?
 
 Most transformers.
 [`ContT`](https://hackage.haskell.org/package/transformers/docs/Control-Monad-Trans-Cont.html#t:ContT)
-(and other continuation based transformers like [`LogicT](https://hackage.haskell.org/package/logict/docs/Control-Monad-Logic.html#t:LogicT))
+(and other continuation based transformers like [`LogicT`](https://hackage.haskell.org/package/logict/docs/Control-Monad-Logic.html#t:LogicT))
 don't work,
 but any transformer that is strictly positive in its monad works
 (i.e., `ReaderT`, `WriterT`, `StateT`, `ExceptT`, `AccumT`, and so on).
