@@ -130,7 +130,7 @@ I expect `has-transformers` to be more performant,
 because there is no runtime overhead associated to effect handling.
 (Although the overhead is expected to be small in `eff` when/if delimited continuations are merged in GHC.)
 How big this overhead is, I can't judge, but it's probably smaller than you'll care about in production.
-Also see https://github.com/fused-effects/fused-effects#benchmarks and https://github.com/polysemy-research/polysemy#what-about-performance-tldr.
+Also see [the `fused-effects` benchmarks](https://github.com/fused-effects/fused-effects#benchmarks) and [a `polysemy` performance discussion](https://github.com/polysemy-research/polysemy#what-about-performance-tldr).
 
 On the other hand, all these libraries support higher-order effects.
 (`operational` is not really extensible out of the box.
