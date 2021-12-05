@@ -1,0 +1,7 @@
+cradle:
+  cabal:
+    - path: "src"
+      component: "lib:has-transformers"
+
+    - path: "examples"
+      component: "has-transformers:test:examples"

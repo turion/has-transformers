@@ -1,0 +1,64 @@
+cabal-version:      2.4
+name:               has-transformers
+version:            0.1.0.0
+
+-- A short (one-line) description of the package.
+-- synopsis:
+
+-- A longer description of the package.
+-- description:
+
+-- A URL where users can report bugs.
+-- bug-reports:
+license:            MIT
+license-file:       LICENSE
+author:             Manuel Bärenz
+maintainer:         m.baerenz@sonnen.de
+
+-- A copyright notice.
+-- copyright:
+-- category:
+extra-source-files: CHANGELOG.md
+
+library
+    exposed-modules:
+        Control.Monad.Trans.Has
+        Control.Monad.Trans.Has.Accum
+        Control.Monad.Trans.Has.Except
+        Control.Monad.Trans.Has.Reader
+        Control.Monad.Trans.Has.State
+        Control.Monad.Trans.Has.Writer
+    default-extensions:
+        ConstraintKinds
+      , FlexibleContexts
+      , FlexibleInstances
+      , ImportQualifiedPost
+      , MultiParamTypeClasses
+      , PackageImports
+    build-depends:    base ^>=4.14.3.0
+                    , transformers
+                    , list-t
+    hs-source-dirs:   src
+    default-language: Haskell2010
+
+test-suite examples
+  type: exitcode-stdio-1.0
+  default-language:    Haskell2010
+  main-is: Spec.hs
+  hs-source-dirs: examples
+  other-modules:
+    Examples.StateSig
+    Examples.TwoReaders
+    Examples.TwoReadersSpec
+  default-extensions:
+      ConstraintKinds
+    , FlexibleContexts
+    , GADTs
+    , ImportQualifiedPost
+    , PackageImports
+  build-depends:
+      base ^>=4.14.3.0
+    , has-transformers
+    , hspec >= 2.9.0
+    , operational
+  build-tool-depends: hspec-discover:hspec-discover
