@@ -64,6 +64,11 @@ It also has some disadvantages over each.
 The usual advantage is that `has-transformers` is fast and simple,
 and the disadvantage is that it doesn't have higher order effects.
 
+There is a big design space here,
+and maybe there is no ideal library for every use case.
+While some corners of the space have been explored thoroughly,
+there is this neat little corner that hasn't received as much attention as maybe deserved.
+
 #### `mtl`
 
 Historically, `mtl` solves the same problem like `has-transformers`,
@@ -197,6 +202,15 @@ e.g. continuation passing, error handling, logic backtracking, and others.
 If you need these, you either have to make the transformer stack explicit
 (which somewhat defeats the purpose of an effect library),
 or use another library to address these effects.
+
+### So what's your recommendation on effect systems?
+
+My opinionated, limited-point-of-view recommendation,
+without knowing your use case,
+is that you should use `transformers` and give `has-transformers` a try if you have a small project that doesn't do anything too fancyful with effects,
+and when you hit stuff like complex error handling, backtracking, and so on,
+upgrade to `fused-effects` if you don't get a headache with the types,
+or migrate to `polysemy` (or maybe `freer-simple`) otherwise.
 
 ## How?
 
