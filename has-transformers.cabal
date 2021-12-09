@@ -1,6 +1,6 @@
 cabal-version:      2.4
 name:               has-transformers
-version:            0.1.0.2
+version:            0.1.0.3
 
 synopsis: This library 'Has' transformers
 
@@ -39,7 +39,7 @@ library
     , MultiParamTypeClasses
     , PackageImports
   build-depends:
-      base ^>= 4.14.3.0
+      base >= 4.14 && < 5
     , transformers
   hs-source-dirs: src
   default-language: Haskell2010
@@ -60,7 +60,7 @@ test-suite examples
     , ImportQualifiedPost
     , PackageImports
   build-depends:
-      base ^>= 4.14.3.0
+      base >= 4.14 && < 5
     , has-transformers
     , hspec >= 2.9.0
     , operational
