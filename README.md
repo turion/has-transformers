@@ -167,7 +167,7 @@ No, you don't have to choose one and discard all the others!
 | [`has-transformers`](https://www.github.com/turion/has-transformers/) | ✅ | ❌ | ✅ | ✅ |
 | [`mtl`](https://hackage.haskell.org/package/mtl) | ❌ | ✅ | ✅ | ✅ |
 | [`fused-effects`](https://hackage.haskell.org/package/fused-effects) | ✅ | ✅ | ✅ | ✅ |
-| [`polysemy`](https://hackage.haskell.org/package/polysemy), [`freer-simple`](https://hackage.haskell.org/package/freer-simple), ... | ✅ | ❌ | ✅ | ✅ |
+| [`polysemy`](https://hackage.haskell.org/package/polysemy), [`freer-simple`](https://hackage.haskell.org/package/freer-simple), ... | ✅ | ✅ | ❌ | ✅ |
 | [`rio`](https://hackage.haskell.org/package/rio) | ✅ | ❌ | ✅ | ❌ |
 
 Let me know if other features & libraries are important to you.
