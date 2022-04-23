@@ -14,5 +14,5 @@ import qualified Control.Monad.Trans.Except as Control.Monad.Trans.Has
 
 type HasExcept e m = Has (ExceptT e) m
 
-throw :: HasExcept e m => e -> m ()
+throw :: HasExcept e m => e -> m a
 throw e = liftH $ ExceptT $ return $ Left e
